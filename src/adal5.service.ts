@@ -140,7 +140,20 @@ export class Adal5Service {
   public handleWindowCallback(): void {
     const hash = window.location.hash;
     if (this.adalContext.isCallback(hash)) {
-      const requestInfo = this.adalContext.getRequestInfo(hash);
+
+      let context: adal.AuthenticationContext;
+
+      if (this.adalContext._openedWindows.length > 0 && this.adalContext._openedWindows[this.adalContext._openedWindows.length - 1].opener
+        && this.adalContext._openedWindows[this.adalContext._openedWindows.length - 1].opener._adalInstance) {
+        context = this.adalContext._openedWindows[this.adalContext._openedWindows.length - 1].opener._adalInstance;
+      } else if (window.parent && window.parent['_adalInstance']) {
+        context = window.parent['_adalInstance'];
+      } else {
+        context = this.adalContext;
+      }
+
+      const requestInfo = context.getRequestInfo(hash);
+
       this.adalContext.saveTokenFromHash(requestInfo);
       if (requestInfo.requestType === this.adalContext.REQUEST_TYPE.LOGIN) {
         this.updateDataFromCache(this.adalContext.config.loginResource);
