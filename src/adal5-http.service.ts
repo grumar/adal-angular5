@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Adal5Service } from './adal5.service';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
@@ -46,11 +46,11 @@ export class Adal5HTTPService {
    *
    * @memberOf Adal5HTTPService
    */
-  get(url: string, options: {
+  get(url: string, options?: {
     body?: any;
     headers?: HttpHeaders;
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
     responseType?: 'json';
     withCredentials?: boolean;
@@ -68,11 +68,11 @@ export class Adal5HTTPService {
    *
    * @memberOf Adal5HTTPService
    */
-  post(url: string, body: any, options: {
+  post(url: string, body: any, options?: {
     body?: any;
     headers?: HttpHeaders;
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
     responseType?: 'json';
     withCredentials?: boolean;
@@ -90,11 +90,11 @@ export class Adal5HTTPService {
    *
    * @memberOf Adal5HTTPService
    */
-  delete(url: string, options: {
+  delete(url: string, options?: {
     body?: any;
     headers?: HttpHeaders;
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
     responseType?: 'json';
     withCredentials?: boolean;
@@ -112,11 +112,11 @@ export class Adal5HTTPService {
    *
    * @memberOf Adal5HTTPService
    */
-  patch(url: string, body: any, options: {
+  patch(url: string, body: any, options?: {
     body?: any;
     headers?: HttpHeaders;
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
     responseType?: 'json';
     withCredentials?: boolean;
@@ -135,11 +135,11 @@ export class Adal5HTTPService {
    *
    * @memberOf Adal5HTTPService
    */
-  put(url: string, body: any, options: {
+  put(url: string, body: any, options?: {
     body?: any;
     headers?: HttpHeaders;
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
     responseType?: 'json';
     withCredentials?: boolean;
@@ -157,11 +157,11 @@ export class Adal5HTTPService {
    *
    * @memberOf Adal5HTTPService
    */
-  head(url: string, options: {
+  head(url: string, options?: {
     body?: any;
     headers?: HttpHeaders;
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
     responseType?: 'json';
     withCredentials?: boolean;
@@ -180,16 +180,27 @@ export class Adal5HTTPService {
    *
    * @memberOf Adal5HTTPService
    */
-  private sendRequest(method: string, url: string, options: {
+  private sendRequest(method: string, url: string, options?: {
     body?: any;
     headers?: HttpHeaders;
     reportProgress?: boolean;
-    observe: 'response';
+    observe?: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
     responseType?: 'json';
     withCredentials?: boolean;
   }): Observable<string> {
 
+    if(!options) {
+      options = {
+        body: null,
+        headers: null,
+        reportProgress: null,
+        observe: 'response',
+        params: null,
+        responseType: 'json',
+        withCredentials: null
+      }
+    }
     const resource = this.service.GetResourceForEndpoint(url);
     let authenticatedCall: Observable<string>;
     if (resource) {
