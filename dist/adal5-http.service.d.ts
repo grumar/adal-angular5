@@ -45,7 +45,7 @@ export declare class Adal5HTTPService {
         params?: HttpParams | {
             [param: string]: string | string[];
         };
-        responseType?: 'json';
+        responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
         withCredentials?: boolean;
     }): Observable<any>;
     /**
@@ -66,7 +66,7 @@ export declare class Adal5HTTPService {
         params?: HttpParams | {
             [param: string]: string | string[];
         };
-        responseType?: 'json';
+        responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
         withCredentials?: boolean;
     }): Observable<any>;
     /**
@@ -86,7 +86,7 @@ export declare class Adal5HTTPService {
         params?: HttpParams | {
             [param: string]: string | string[];
         };
-        responseType?: 'json';
+        responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
         withCredentials?: boolean;
     }): Observable<any>;
     /**
@@ -107,7 +107,7 @@ export declare class Adal5HTTPService {
         params?: HttpParams | {
             [param: string]: string | string[];
         };
-        responseType?: 'json';
+        responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
         withCredentials?: boolean;
     }): Observable<any>;
     /**
@@ -128,7 +128,7 @@ export declare class Adal5HTTPService {
         params?: HttpParams | {
             [param: string]: string | string[];
         };
-        responseType?: 'json';
+        responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
         withCredentials?: boolean;
     }): Observable<any>;
     /**
@@ -148,7 +148,7 @@ export declare class Adal5HTTPService {
         params?: HttpParams | {
             [param: string]: string | string[];
         };
-        responseType?: 'json';
+        responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
         withCredentials?: boolean;
     }): Observable<any>;
     /**
