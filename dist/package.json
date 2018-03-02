@@ -1,6 +1,6 @@
 {
   "name": "adal-angular5-fork",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "ADAL wrapper for Angular5. (fork by scientificnet.org)",
   "main": "index.js",
   "repository": {
