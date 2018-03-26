@@ -1,7 +1,7 @@
 {
-    "name": "adal-angular5",
-    "version": "1.0.36",
-    "description": "ADAL wrapper for Angular5.",
+    "name": "adal-angular5-fork",
+    "version": "1.0.38",
+    "description": "ADAL wrapper for Angular5. (fork by scientificnet.org)",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"

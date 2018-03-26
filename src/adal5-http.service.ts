@@ -52,7 +52,7 @@ export class Adal5HTTPService {
     reportProgress?: boolean;
     observe: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
-    responseType?: 'json';
+    responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
     withCredentials?: boolean;
   }): Observable<any> {
     return this.sendRequest('get', url, options);
@@ -74,7 +74,7 @@ export class Adal5HTTPService {
     reportProgress?: boolean;
     observe: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
-    responseType?: 'json';
+    responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
     withCredentials?: boolean;
   }): Observable<any> {
     options.body = body;
@@ -96,7 +96,7 @@ export class Adal5HTTPService {
     reportProgress?: boolean;
     observe: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
-    responseType?: 'json';
+    responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
     withCredentials?: boolean;
   }): Observable<any> {
     return this.sendRequest('delete', url, options);
@@ -118,7 +118,7 @@ export class Adal5HTTPService {
     reportProgress?: boolean;
     observe: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
-    responseType?: 'json';
+    responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
     withCredentials?: boolean;
   }): Observable<any> {
     options.body = body;
@@ -141,7 +141,7 @@ export class Adal5HTTPService {
     reportProgress?: boolean;
     observe: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
-    responseType?: 'json';
+    responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
     withCredentials?: boolean;
   }): Observable<any> {
     options.body = body;
@@ -163,7 +163,7 @@ export class Adal5HTTPService {
     reportProgress?: boolean;
     observe: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
-    responseType?: 'json';
+    responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
     withCredentials?: boolean;
   }): Observable<any> {
     return this.sendRequest('head', url, options);
@@ -186,7 +186,7 @@ export class Adal5HTTPService {
     reportProgress?: boolean;
     observe: 'response';
     params?: HttpParams | { [param: string]: string | string[]; };
-    responseType?: 'json';
+    responseType?: 'json' | 'text' | 'arraybuffer' | 'blob';
     withCredentials?: boolean;
   }): Observable<string> {
 
