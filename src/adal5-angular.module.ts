@@ -19,4 +19,4 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
         },
     ],
 })
-export class Adal5AgnularModule { }
+export class Adal5AngularModule { }
